@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ysu.idea</groupId>
+    <artifactId>java8</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Scala</module>
+        <module>Java</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <name>java8 Maven Webapp</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <spark.version>2.1.1</spark.version>
+        <scala.version>2.11.8</scala.version>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.22</slf4j.version>
+    </properties>
+
+    <!--<dependencies>-->
+    <!--<dependency>-->
+    <!--<groupId>org.apache.spark</groupId>-->
+    <!--<artifactId>spark-core_2.11</artifactId>-->
+    <!--<version>${spark.version}</version>-->
+    <!--&lt;!&ndash; 编译期可用，运行期不可用 &ndash;&gt;-->
+    <!--<scope>provided</scope>-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+    <!--<groupId>org.scala-lang</groupId>-->
+    <!--<artifactId>scala-library</artifactId>-->
+    <!--<version>${scala.version}</version>-->
+    <!--<scope>provided</scope>-->
+    <!--</dependency>-->
+
+    <!--&lt;!&ndash; Logging &ndash;&gt;-->
+    <!--<dependency>-->
+    <!--<groupId>org.slf4j</groupId>-->
+    <!--<artifactId>jcl-over-slf4j</artifactId>-->
+    <!--<version>${slf4j.version}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>org.slf4j</groupId>-->
+    <!--<artifactId>slf4j-api</artifactId>-->
+    <!--<version>${slf4j.version}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>org.slf4j</groupId>-->
+    <!--<artifactId>slf4j-log4j12</artifactId>-->
+    <!--<version>${slf4j.version}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>log4j</groupId>-->
+    <!--<artifactId>log4j</artifactId>-->
+    <!--<version>${log4j.version}</version>-->
+    <!--</dependency>-->
+    <!--&lt;!&ndash; Logging End &ndash;&gt;-->
+
+    <!--<dependency>-->
+    <!--<groupId>junit</groupId>-->
+    <!--<artifactId>junit</artifactId>-->
+    <!--<version>4.11</version>-->
+    <!--<scope>test</scope>-->
+    <!--</dependency>-->
+
+    <!--</dependencies>-->
+
+    <build>
+        <finalName>java8</finalName>
+        <pluginManagement></pluginManagement>
+        <plugins>
+            <!-- 声明你的JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- Scala的编译插件 -->
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>

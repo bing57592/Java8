@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: bing57592
+Created-By: Apache Maven 3.5.4
+Build-Jdk: 1.8.0_144
+Main-Class: om.ysu.spark._01_WordCount
+
