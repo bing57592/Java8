@@ -9,6 +9,7 @@ public class Person {
     private int age;
 
     public Person() {
+        System.out.println("调用空参构造器");
     }
 
     public Person(String name, Integer age) {
