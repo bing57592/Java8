@@ -9,6 +9,7 @@
     <modules>
         <module>Scala</module>
         <module>Java</module>
+        <module>Algorithm</module>
     </modules>
     <packaging>pom</packaging>
 
