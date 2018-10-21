@@ -7,41 +7,43 @@ package com.ysu._03_reflect.bean;
  */
 
 
-@MyAnnotation(value="ysu")
-public class Person extends Creature<String> implements Comparable<Person>,MyInterface{
+@MyAnnotation(value = "ysu")
+public class Person extends Creature<String> implements Comparable<Person>, MyInterface {
 
     public String name;
     private int age;
 
     private static String nation = "CHN";
 
-    public Person(){
+    public Person() {
         System.out.println("Person()");
     }
-    private Person(String name){
+
+    private Person(String name) {
         this.name = name;
     }
 
-    protected Person(String name,int age){
+    protected Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    @MyAnnotation(value="hello")
-    public void show() throws RuntimeException{
+    @MyAnnotation(value = "hello")
+    public void show() throws RuntimeException {
         System.out.println("name = " + name + ",age = " + age);
     }
 
-    public String info(){
+    public String info() {
         return name + ":" + age;
     }
 
-    private String display(String nation){
+    private String display(String nation) {
         System.out.println("我是" + nation + "国家的人");
         return nation;
     }
+
     @Override
-    @MyAnnotation(value="hi")
+    @MyAnnotation(value = "hi")
     public String toString() {
         return "Person [name=" + name + ", age=" + age + "]";
     }
@@ -51,9 +53,7 @@ public class Person extends Creature<String> implements Comparable<Person>,MyInt
         return 0;
     }
 
-    public static void showNation(){
+    public static void showNation() {
         System.out.println("我是中国人！");
     }
-
-
 }

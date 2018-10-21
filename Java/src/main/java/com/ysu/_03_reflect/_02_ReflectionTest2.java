@@ -12,20 +12,60 @@ import java.lang.reflect.*;
  */
 public class _02_ReflectionTest2 {
 
+
+    /**
+     * 获取构造器
+     *
+     * @throws Exception
+     */
+    @Test
+    public void test7() throws Exception {
+        Class<Person> personClass = Person.class;
+        Constructor<?>[] declaredConstructors = personClass.getDeclaredConstructors();
+        for (Constructor<?> constructor : declaredConstructors) {
+            System.out.println(constructor);
+        }
+
+        Constructor<Person> constructor = personClass.getDeclaredConstructor(String.class, int.class);
+        //注意: int.class != Integer.class
+        constructor.setAccessible(true);
+        Person hello = constructor.newInstance("hello", 123);
+        System.out.println(hello);
+    }
+
+    /**
+     * 通过反射调取对象指定的方法
+     *
+     * @throws Exception
+     */
+    @Test
+    public void test6() throws Exception {
+        Class<Person> personClass = Person.class;
+        Field nationField = personClass.getField("name");
+        Person person = personClass.newInstance();
+        nationField.set(person, "日本");
+
+        Method display = personClass.getDeclaredMethod("display", String.class);
+        display.setAccessible(true);
+        String result = (String) display.invoke(person, "中国");
+        System.out.println(result);
+
+    }
+
     //获取运行时类所实现的接口
     @Test
-    public void test5(){
+    public void test5() {
         Class clazz = Person.class;
 
         Class[] interfaces = clazz.getInterfaces();
-        for(Class c : interfaces){
+        for (Class c : interfaces) {
             System.out.println(c);
         }
     }
 
 
     @Test
-    public void testGetSuperClassGenericParam() throws Exception{
+    public void testGetSuperClassGenericParam() throws Exception {
         String className = "com.atguigu.java1.Person";
         className = "com.atguigu.java2.CustomerDAO";
         className = "com.atguigu.java2.OrderDAO";
@@ -34,32 +74,32 @@ public class _02_ReflectionTest2 {
     }
 
     //体会反射的动态性
-    public String getSuperClassGenericParam(String className) throws Exception{
+    public String getSuperClassGenericParam(String className) throws Exception {
 
         Class clazz = Class.forName(className);
         Type genericSuperClass = clazz.getGenericSuperclass();
         ParameterizedType paramsType = (ParameterizedType) genericSuperClass;
         Type[] arguments = paramsType.getActualTypeArguments();
-        return ((Class)arguments[0]).getName();
+        return ((Class) arguments[0]).getName();
 
     }
 
     //获取运行时类的带泛型的父类的泛型
     //逻辑性代码     功能性代码
     @Test
-    public void test_generic_superclass2(){
+    public void test_generic_superclass2() {
         Class clazz = Person.class;
 
         Type genericSuperClass = clazz.getGenericSuperclass();
         ParameterizedType paramsType = (ParameterizedType) genericSuperClass;
         Type[] arguments = paramsType.getActualTypeArguments();
-        System.out.println(((Class)arguments[0]).getName());
+        System.out.println(((Class) arguments[0]).getName());
 
     }
 
     //获取运行时类的带泛型的父类
     @Test
-    public void test_generic_superclass1(){
+    public void test_generic_superclass1() {
         Class clazz = Person.class;
 
         Type genericSuperClass = clazz.getGenericSuperclass();
@@ -68,7 +108,7 @@ public class _02_ReflectionTest2 {
 
     //获取运行时类的父类
     @Test
-    public void test_superclass(){
+    public void test_superclass() {
         Class clazz = Person.class;
 
         Class superClass = clazz.getSuperclass();
@@ -80,7 +120,7 @@ public class _02_ReflectionTest2 {
 
     //获取运行时类所属的包
     @Test
-    public void test_package(){
+    public void test_package() {
         Class clazz = Person.class;
 
         Package pack = clazz.getPackage();

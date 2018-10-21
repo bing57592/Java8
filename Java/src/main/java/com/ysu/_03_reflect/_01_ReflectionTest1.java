@@ -1,7 +1,7 @@
 package com.ysu._03_reflect;
 
-import com.ysu._00_bean.Person;
-import com.ysu._00_bean.RiskParam;
+import com.ysu._00_common.bean.Person;
+import com.ysu._00_common.bean.RiskParam;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 

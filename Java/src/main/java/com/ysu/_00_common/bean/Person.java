@@ -1,4 +1,4 @@
-package com.ysu._00_bean;
+package com.ysu._00_common.bean;
 
 /**
  * created by bing57592
