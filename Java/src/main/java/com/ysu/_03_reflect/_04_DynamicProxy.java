@@ -5,6 +5,7 @@ import com.ysu._00_common.util.MyStringUtils;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 要想实现动态代理类对象的功能，需要解决两个问题：
@@ -26,11 +27,20 @@ public class _04_DynamicProxy {
         MyStringUtils.line();
 
         Switch_Factory switch_factory = new Switch_Factory();
-        Factory proxyInstance = (Factory)DynamicProxyFactory.getProxyInstance(switch_factory);
+        Factory proxyInstance = (Factory) DynamicProxyFactory.getProxyInstance(switch_factory);
         proxyInstance.product();
     }
 }
 
+class LogUtil {
+    public static void log1() {
+        System.out.println("输出日志1");
+    }
+
+    public static void log2() {
+        System.out.println("输出日志2");
+    }
+}
 
 class MyInvocationHandler implements InvocationHandler {
     private Object object; //看做被代理类的对象
@@ -40,7 +50,9 @@ class MyInvocationHandler implements InvocationHandler {
     //这里希望调用的是被代理类方法
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        LogUtil.log1();
         Object invokeVal = method.invoke(object, args);
+        LogUtil.log2();
         return invokeVal;
     }
 
@@ -53,7 +65,7 @@ class MyInvocationHandler implements InvocationHandler {
 class DynamicProxyFactory {
     //调用此方法，返回一个代理类的对象
     public static Object getProxyInstance(Object obj) {//形参obj：被代理类的对象
-
+        ConcurrentHashMap<Object, Object> objectObjectConcurrentHashMap = new ConcurrentHashMap<>();
         MyInvocationHandler handler = new MyInvocationHandler();
         handler.bind(obj);
         // 下边这个方法, 入参分别为: 1.与代理类相同的类加载器, 2.与代理类相同的接口, 3.被代理类的对象
