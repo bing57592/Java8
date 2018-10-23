@@ -17,19 +17,33 @@ import org.slf4j.LoggerFactory;
  */
 public class LockDemo {
 
+    Logger logger = MyLogUtils.getLogger();
+
+    UnReentrantLock unReentrantLock = new UnReentrantLock();//不可重入锁
+
+    ReentrantLock reentrantLock = new ReentrantLock();//可重入锁
+
     @Test
-    public void testLog() {
-        Logger logger = MyLogUtils.getLogger();
-        logger.info("hello");
+    public void test2() throws Exception {
+        reentrantLock.lock();
+        logger.info("做第一件工作");
+        dosome();
+        reentrantLock.unlock();//解锁
     }
 
     @Test
     public void test1() throws Exception {
-        UnReentrantLock unReentrantLock = new UnReentrantLock();
-        unReentrantLock.lock();
+
+        unReentrantLock.lock(); //上锁
+        logger.info("做第一件工作");
+        dosome();
+        unReentrantLock.unlock();//解锁
+
     }
 
-    private void dosome() {
-        System.out.println("");
+    private void dosome() throws Exception {
+        reentrantLock.lock();
+        logger.info("做第二件工作");
+        reentrantLock.unlock();
     }
 }
