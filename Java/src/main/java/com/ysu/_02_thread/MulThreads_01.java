@@ -8,7 +8,7 @@ import java.util.concurrent.*;
  * created by bing57592
  * 2018-10-11 13:57
  */
-public class MulThread_01 {
+public class MulThreads_01 {
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(100);
         CompletionService cs = new ExecutorCompletionService(executorService);

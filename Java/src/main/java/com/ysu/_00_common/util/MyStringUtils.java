@@ -6,7 +6,7 @@ package com.ysu._00_common.util;
  */
 public class MyStringUtils {
     /**
-     * 控制台用的分界符
+     * 分界符
      */
     public static void line() {
         System.out.println("--------------------");
