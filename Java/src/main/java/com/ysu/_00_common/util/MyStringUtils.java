@@ -11,4 +11,14 @@ public class MyStringUtils {
     public static void line() {
         System.out.println("--------------------");
     }
+
+
+    public static String randomString(int length) {
+        char[] chars = new char[length];
+        for (char aChar : chars) {
+
+        }
+
+        return null;
+    }
 }
