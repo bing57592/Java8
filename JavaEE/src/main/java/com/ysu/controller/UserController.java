@@ -7,6 +7,8 @@
 package com.ysu.controller;
 
 import com.ysu.annotation.User;
+import com.ysu.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,9 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 public class UserController {
 
-    public UserController() {
-        System.out.println("init UserController");
-    }
+    @Autowired
+    private UserService userService;
+
 
     @ResponseBody
     @RequestMapping("/method1")
@@ -29,20 +31,22 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping("/method2")
-    public Object method2(@User String user) {
+    @RequestMapping("/method2/id")
+    public Object method2(String user) {
         return user;
     }
 
     @ResponseBody
     @RequestMapping("/method3")
-    public Object method3(@User String user) {
+    public Object method3(String user) {
         return user;
     }
 
     @ResponseBody
     @RequestMapping("/method4")
-    public Object method4(@User String user) {
+    public Object method4(String user) {
+        userService.insert();
         return user;
     }
+
 }

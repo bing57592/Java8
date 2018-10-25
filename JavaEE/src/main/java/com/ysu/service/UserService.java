@@ -7,4 +7,13 @@ import com.ysu.bean.User;
  */
 public interface UserService {
     User getUserById(Integer id);
+
+
+    void insert();
+
+    void delete();
+
+    void update();
+
+    void select();
 }

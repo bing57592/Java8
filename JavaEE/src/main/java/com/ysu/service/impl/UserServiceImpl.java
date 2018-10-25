@@ -8,6 +8,7 @@ package com.ysu.service.impl;
 
 import com.ysu.bean.User;
 import com.ysu.service.UserService;
+import com.ysu.util.BeanUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -21,8 +22,11 @@ public class UserServiceImpl implements UserService {
 
     private static Map<Integer, User> dataSourceMap = new HashMap<>();
 
-    static {
+    public UserServiceImpl() {
+        BeanUtils.declareInit(UserServiceImpl.class);
+    }
 
+    static {
         dataSourceMap.put(1, new User(1, "aa", 11, "12345"));
         dataSourceMap.put(2, new User(2, "vv", 13124, "12345"));
         dataSourceMap.put(3, new User(3, "df", 11, "12345"));
@@ -33,5 +37,25 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(Integer id) {
         return dataSourceMap.get(id);
+    }
+
+    @Override
+    public void insert() {
+        System.out.println("user insert");
+    }
+
+    @Override
+    public void delete() {
+        System.out.println("user delete");
+    }
+
+    @Override
+    public void update() {
+        System.out.println("user update");
+    }
+
+    @Override
+    public void select() {
+        System.out.println("user select");
     }
 }
