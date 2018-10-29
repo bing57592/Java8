@@ -6,9 +6,15 @@
  */
 package com.ysu.aop;
 
+import com.ysu.annotation.AntiBrush;
 import com.ysu.util.BeanUtils;
+import jdk.nashorn.internal.ir.BlockLexicalContext;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Method;
 
 
 /**
@@ -17,14 +23,32 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class UserAop {
+    boolean flag = true;
 
     public UserAop() {
-        BeanUtils.declareInit(UserAop.class);
     }
 
-    @Before("execution(* com.ysu.service.UserService.insert(..))")
-    public void before() {
-        System.out.println("[AOP] Before");
+    @Pointcut("@annotation(com.ysu.annotation.AntiBrush)")
+    public void antiBrushAOP() {
+
+    }
+
+    @Around("antiBrushAOP()")// 每一个加了这个注解的方法, 都会走下面的逻辑. 如果调用了joinPont.proceed()方法, 就会执行被这个注解声明了的方法.
+    public Object before(ProceedingJoinPoint joinPoint) throws Exception {
+        Object obj = null;
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        Method method = methodSignature.getMethod();
+        AntiBrush annotation = method.getAnnotation(AntiBrush.class);
+        int counts = annotation.counts();
+        int milliseconds = annotation.milliseconds();
+        System.out.println("antiBrushAOP - " + counts + ":" + milliseconds);
+        try {
+            obj = joinPoint.proceed(); // 这个方法可以传一个Object[] 数组, 如果传了的话, 必须和目标方法入参相同. 如果不传就没有类似的规定.
+            System.out.println("执行!!!!!!!!!! Let's Go! For the Horde");
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        return obj;
     }
 
     @After("execution(* com.ysu.service.impl.UserServiceImpl.insert())")

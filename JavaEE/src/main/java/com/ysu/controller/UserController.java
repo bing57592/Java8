@@ -6,6 +6,7 @@
  */
 package com.ysu.controller;
 
+import com.ysu.annotation.AntiBrush;
 import com.ysu.annotation.User;
 import com.ysu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,16 +38,23 @@ public class UserController {
     }
 
     @ResponseBody
+    @AntiBrush(milliseconds = 555, counts = 123)
     @RequestMapping("/method3")
     public Object method3(String user) {
         return user;
     }
 
+
     @ResponseBody
+    @AntiBrush(milliseconds = 123, counts = 1)
     @RequestMapping("/method4")
     public Object method4(String user) {
         userService.insert();
-        return user;
+        com.ysu.bean.User userBean = new com.ysu.bean.User();
+        userBean.setAge(123);
+        userBean.setId(4567489);
+        userBean.setName("微信");
+        userBean.setTelephone("52");
+        return userBean;
     }
-
 }

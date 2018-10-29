@@ -15,4 +15,7 @@ public class User {
     String name;
     Integer age;
     String telephone;
+
+    public User() {
+    }
 }
