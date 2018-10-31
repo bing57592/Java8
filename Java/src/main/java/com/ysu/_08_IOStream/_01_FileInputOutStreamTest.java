@@ -1,7 +1,10 @@
 package com.ysu._08_IOStream;
 
+import com.ysu._00_common.util.MyIOUtils;
+import com.ysu._00_common.util.MyStringUtils;
 import org.junit.Test;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -24,6 +27,31 @@ import java.io.FileInputStream;
  * 2018-10-30 00:56
  */
 public class _01_FileInputOutStreamTest {
+    /**
+     * FileInputStream 在使用完以后，不关闭流，想二次使用可以怎么操作？
+     *
+     * @throws Exception
+     */
+    @Test
+    public void test() throws Exception {
+        File file = MyIOUtils.initFile();
+        FileInputStream fis = new FileInputStream(file);
+        BufferedInputStream bis = new BufferedInputStream(fis);
+        bis.mark(0);
+        MyIOUtils.readInputStream(fis);
+        MyStringUtils.line();
+
+
+        try {
+            bis.reset();
+            MyIOUtils.readInputStream(bis);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            MyIOUtils.closeStream(bis, fis);
+        }
+    }
 
 
     /**
@@ -66,13 +94,30 @@ public class _01_FileInputOutStreamTest {
         File file = new File("/Users/bing57592/Documents/code/Java8/Java/src/main/resources/IOStreamFile/hello.txt");
         //2. 将file对象作为参数传递到流的构造器中, 创建一个字节的输入流.
         FileInputStream fis = new FileInputStream(file);
+        BufferedInputStream bis = new BufferedInputStream(fis);
+
         //3. read(): 读取文件中的下一个字节, 如果到达文件末尾的话, 则返回-1
-        int bit = fis.read();
+        int bit = bis.read();
         while (bit != -1) {
             System.out.print((char) bit);
-            bit = fis.read();// 进行下一次读取
+            bit = bis.read();// 进行下一次读取
         }
+
         System.out.println();
-        fis.close();
+        MyStringUtils.line();
+        try {
+
+            bis.reset();
+            bit = bis.read();
+            while (bit != -1) {
+                System.out.print((char) bit);
+                bit = bis.read();// 进行下一次读取
+            }
+            System.out.println();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            MyIOUtils.closeStream(bis, fis);
+        }
     }
 }

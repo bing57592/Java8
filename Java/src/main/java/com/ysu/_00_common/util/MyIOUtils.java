@@ -65,5 +65,13 @@ public class MyIOUtils {
         }
     }
 
+    public static void readInputStream(InputStream is) throws Exception {
+        int len = 0;
+        byte[] bBuf = new byte[1024];
+        while ((len = is.read(bBuf)) != -1) {
+            String str = new String(bBuf, 0, len);
+            System.out.print(str);
+        }
+    }
 
 }
