@@ -8,7 +8,7 @@ package com.ysu.service.impl;
 
 import com.ysu.bean.User;
 import com.ysu.service.UserService;
-import com.ysu.util.BeanUtils;
+import com.ysu.utils.BeanUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

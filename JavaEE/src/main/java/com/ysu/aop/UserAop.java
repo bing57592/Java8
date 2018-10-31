@@ -6,7 +6,7 @@
  */
 package com.ysu.aop;
 
-import com.ysu.util.BeanUtils;
+import com.ysu.utils.BeanUtils;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 

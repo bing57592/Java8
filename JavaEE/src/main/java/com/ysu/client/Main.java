@@ -1,7 +1,7 @@
 package com.ysu.client;
 
-import com.ysu.util.HttpClientUtils;
-import com.ysu.util.TimeUtils;
+import com.ysu.utils.HttpClientUtils;
+import com.ysu.utils.TimeUtils;
 
 /**
  * 这个类, 只是对服务器执行了请求.

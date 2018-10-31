@@ -1,4 +1,4 @@
-package com.ysu.util;
+package com.ysu.utils;
 
 /**
  * created by bing57592

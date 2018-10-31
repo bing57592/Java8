@@ -1,4 +1,4 @@
-package com.ysu.util;
+package com.ysu.utils;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;

@@ -8,7 +8,7 @@ package com.ysu.controller;
 
 import com.ysu.annotation.User;
 import com.ysu.service.UserService;
-import com.ysu.util.RedisUtils;
+import com.ysu.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
