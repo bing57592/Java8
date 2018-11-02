@@ -32,7 +32,7 @@ public class MulThreads_02 {
             }).start();
         }
 
-        MyThreadUtils.threadSleep(1000);
+        MyThreadUtils.sleep(1000);
 
         System.out.println(sum);
     }
@@ -47,7 +47,7 @@ public class MulThreads_02 {
                 return sum;
             });
         }
-        MyThreadUtils.threadSleep(1000);
+        MyThreadUtils.sleep(1000);
         System.out.println(sum);
     }
 }

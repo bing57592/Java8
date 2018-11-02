@@ -16,7 +16,7 @@ public class MyThreadUtils {
      *
      * @param milliseconds
      */
-    public static void threadSleep(long milliseconds) {
+    public static void sleep(long milliseconds) {
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {

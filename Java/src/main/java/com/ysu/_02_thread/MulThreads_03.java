@@ -20,14 +20,14 @@ public class MulThreads_03 {
 
         new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                MyThreadUtils.threadSleep(1);
+                MyThreadUtils.sleep(1);
                 list.add(i);
             }
         }).start();
 
         new Thread(() -> {
             for (int i = 1000; i < 2000; i++) {
-                MyThreadUtils.threadSleep(1);
+                MyThreadUtils.sleep(1);
                 list.add(i);
             }
         }).start();
