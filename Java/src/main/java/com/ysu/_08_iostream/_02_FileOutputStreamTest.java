@@ -1,4 +1,4 @@
-package com.ysu._08_IOStream;
+package com.ysu._08_iostream;
 
 import com.ysu._00_common.util.MyIOUtils;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.ysu._09_NIO;
+package com.ysu._09_nio;
 
 import com.ysu._00_common.util.MyIOUtils;
 import org.junit.Test;

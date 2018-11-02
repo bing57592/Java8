@@ -1,4 +1,4 @@
-package com.ysu._09_NIO;
+package com.ysu._09_nio;
 
 import org.junit.Test;
 
