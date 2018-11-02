@@ -1,0 +1,21 @@
+package com.ysu._10_singleton;
+
+/**
+ * created by bing57592
+ * 2018-11-02 09:36
+ */
+public class StaticInnerSingleton { //完成了懒汉式的延迟加载，同时static保证了线程安全。
+
+    private StaticInnerSingleton() {
+
+    }
+
+    public static StaticInnerSingleton getIntance() {
+        return SingletonHolder.mIntance;
+    }
+
+    private static class SingletonHolder { //私有的，初始化的时候，没有调用getIntance方法则不会加载
+        private static final StaticInnerSingleton mIntance = new StaticInnerSingleton();  //static,final是jvm提供的同步机制，初始化后就无法修改了
+    }
+
+}
