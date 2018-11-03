@@ -18,7 +18,23 @@ public class MyStringUtils {
         for (char aChar : chars) {
 
         }
-
         return null;
     }
+
+    public static void print(String msg, Object... params) {
+
+        String knife = "\\?";
+        String result = "";
+
+        // 这里: {} 以及 ? 属于特殊符号, 需要转义
+
+
+        String[] split = msg.split(knife);
+        for (int i = 0; i < params.length; i++) {
+            result += split[i] + params[i];
+        }
+        result = result + split[split.length - 1];
+        System.out.println(result);
+    }
+
 }

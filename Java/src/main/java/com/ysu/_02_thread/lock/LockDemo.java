@@ -9,7 +9,6 @@ package com.ysu._02_thread.lock;
 import com.ysu._00_common.util.MyLogUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 /**
@@ -21,14 +20,14 @@ public class LockDemo {
 
     UnReentrantLock unReentrantLock = new UnReentrantLock();//不可重入锁
 
-    ReentrantLock reentrantLock = new ReentrantLock();//可重入锁
+    MyReentrantLock myReentrantLock = new MyReentrantLock();//可重入锁
 
     @Test
     public void test2() throws Exception {
-        reentrantLock.lock();
+        myReentrantLock.lock();
         logger.info("做第一件工作");
         dosome();
-        reentrantLock.unlock();//解锁
+        myReentrantLock.unlock();//解锁
     }
 
     @Test
@@ -42,8 +41,8 @@ public class LockDemo {
     }
 
     private void dosome() throws Exception {
-        reentrantLock.lock();
+        myReentrantLock.lock();
         logger.info("做第二件工作");
-        reentrantLock.unlock();
+        myReentrantLock.unlock();
     }
 }

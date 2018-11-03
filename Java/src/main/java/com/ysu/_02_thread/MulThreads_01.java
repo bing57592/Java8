@@ -31,7 +31,9 @@ public class MulThreads_01 {
             return null;
         });
 
-        cs.poll(10,TimeUnit.DAYS);
+        for (int i = 0; i < 4; i++) {
+            cs.poll(10, TimeUnit.DAYS);
+        }
         long end = System.currentTimeMillis();
         System.out.println("一共花费了: " + (end - start) + "秒");
         executorService.shutdown();

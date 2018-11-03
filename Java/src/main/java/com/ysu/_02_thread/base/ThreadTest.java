@@ -11,11 +11,20 @@ import lombok.Data;
  * 3. 实例化Thread子类
  * 4. 调用子类对象的start().
  * <p>
+ * *********
  * 二. 线程中常用方法:
  * 1. yield(): 当前线程调用此方法, 释放cpu资源, 然后和其他线程共同争抢cpu资源.
  * ** 所以会出现: 分线程yield()之后, 随后的执行执行的依然是分线程, 这是正常的.
  * 2. join(): 在线程a中, 调用线程b的join()方法, 线程a会阻塞, 线程b会插队, 直到线程b执行完所有方法.
- * 3. sleep(long millitimes): 让当前的线程睡眠多少毫秒
+ * 3. sleep(long millitimes): 让当前的线程睡眠多少毫秒.
+ * 4. isAlive(): 判断当前线程是否存活.
+ * **** wait(), notify(), notifyAll() 方法. 在线程通信的地方会用得到.
+ * wait(): 失去同步锁.
+ * notify():
+ * notifyAll():
+ * <p>
+ * *********
+ * 三. 线程的优先级: 1~10 最低是1, 最高是10.  setPriority(int i) getPriority
  * created by bing57592
  * 2018-11-02 21:13
  */

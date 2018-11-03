@@ -11,6 +11,10 @@ package com.ysu._00_common.util;
  */
 public class MyThreadUtils {
 
+    public static long time() {
+        return System.currentTimeMillis();
+    }
+
     /**
      * 线程休眠, 单位毫秒
      *
@@ -23,4 +27,33 @@ public class MyThreadUtils {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 线程挂起, 释放锁资源, 在线程通信中使用. (主要是因为try-catch) 太难看了.
+     *
+     * @param object
+     */
+    public static void waitThread(Object object) {
+        try {
+            // 一旦进入此方法, [当前线程]进入阻塞状态. 同时释放同步监视器.
+            // 与sleep()相比, wait()会释放锁,而sleep()不会.
+            object.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 关闭虚拟机, 用户(其实就是我)忘记关闭虚拟机导致笔记本(就是我的 MacBook Pro) 风扇转速过高.
+     */
+    public static void stopJVM() {
+        stopJVM(60000);
+    }
+
+    public static void stopJVM(long millisecond) {
+        sleep(millisecond);
+        System.out.println("***** 时间过长, 虚拟机自动关闭了!!! *****");
+        System.exit(1);
+    }
+
 }

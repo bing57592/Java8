@@ -10,7 +10,7 @@ package com.ysu._02_thread.lock;
  * 自定义一个<可重入锁><br>
  * Created by 陈宪东 on 2018/10/23 15:10
  */
-public class ReentrantLock {
+public class MyReentrantLock {
     boolean isLocked = false;
     Thread lockedBy = null;
     int lockedCount = 0;
