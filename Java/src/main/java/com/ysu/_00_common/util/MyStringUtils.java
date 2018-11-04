@@ -1,5 +1,7 @@
 package com.ysu._00_common.util;
 
+import org.junit.Test;
+
 /**
  * created by bing57592
  * 2018-10-21 10:41
@@ -21,6 +23,10 @@ public class MyStringUtils {
         return null;
     }
 
+    public static void print(Object msg) {
+        System.out.println(msg);
+    }
+
     public static void print(String msg, Object... params) {
 
         String knife = "\\?";
@@ -33,8 +39,16 @@ public class MyStringUtils {
         for (int i = 0; i < params.length; i++) {
             result += split[i] + params[i];
         }
-        result = result + split[split.length - 1];
+        if (split.length > params.length) {// 这里适配了结尾处为?的情况.
+            result = result + split[split.length - 1];
+        }
         System.out.println(result);
+    }
+
+    @Test
+    public void test() throws Exception {
+        String[] split = "当前线程 = ?   当前结果 = ?".split("\\?");
+        System.out.println(split.length);
     }
 
 }

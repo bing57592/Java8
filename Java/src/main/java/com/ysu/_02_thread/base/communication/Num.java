@@ -25,7 +25,7 @@ public class Num implements Runnable {
                 if (nums < 100) {
                     MyStringUtils.print("? 存入银行1块钱, 当前余额 = ? ", new Object[]{Thread.currentThread().getName(), ++nums});
                     MyThreadUtils.sleep(2000);
-                    MyThreadUtils.waitThread(this);
+                    MyThreadUtils.wait(this);
                 }
             }
         }

@@ -21,6 +21,7 @@ public class MyThreadUtils {
      * @param milliseconds
      */
     public static void sleep(long milliseconds) {
+        if (milliseconds <= 0) return;
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
@@ -33,7 +34,7 @@ public class MyThreadUtils {
      *
      * @param object
      */
-    public static void waitThread(Object object) {
+    public static void wait(Object object) {
         try {
             // 一旦进入此方法, [当前线程]进入阻塞状态. 同时释放同步监视器.
             // 与sleep()相比, wait()会释放锁,而sleep()不会.
@@ -47,7 +48,7 @@ public class MyThreadUtils {
      * 关闭虚拟机, 用户(其实就是我)忘记关闭虚拟机导致笔记本(就是我的 MacBook Pro) 风扇转速过高.
      */
     public static void stopJVM() {
-        stopJVM(60000);
+        stopJVM(20000);
     }
 
     public static void stopJVM(long millisecond) {
