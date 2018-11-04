@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel.loopnotify;
+package com.ysu._02_thread.highlevel._03_loopnotify;
 
 /**
  * Java多线程循环调用: 实现 A -> B -> C -> A...

@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel.consumer_provide;
+package com.ysu._02_thread.highlevel._02_consumer_provide;
 
 
 import com.ysu._00_common.util.MyThreadUtils;

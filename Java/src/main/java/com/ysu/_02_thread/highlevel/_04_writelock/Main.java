@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel.writelock;
+package com.ysu._02_thread.highlevel._04_writelock;
 
 /**
  * 读写锁: 一个线程写, 100个线程读.

@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel.writelock;
+package com.ysu._02_thread.highlevel._04_writelock;
 
 import com.ysu._00_common.util.MyStringUtils;
 import com.ysu._00_common.util.MyThreadUtils;

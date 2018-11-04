@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel.callable;
+package com.ysu._02_thread.highlevel._01_callable;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;

@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel.loopnotify;
+package com.ysu._02_thread.highlevel._03_loopnotify;
 
 import com.ysu._00_common.util.MyStringUtils;
 
