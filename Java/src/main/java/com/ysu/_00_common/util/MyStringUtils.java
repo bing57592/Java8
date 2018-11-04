@@ -24,8 +24,20 @@ public class MyStringUtils {
     }
 
     public static void print(Object msg) {
-        System.out.println(msg);
+        System.out.print(msg);
     }
+
+
+    public static void println(Object msg) {
+        msg += "\n";
+        print(msg);
+    }
+
+    public static void println(String msg, Object... params) {
+        msg += "\n";
+        print(msg, params);
+    }
+
 
     public static void print(String msg, Object... params) {
 
@@ -42,7 +54,7 @@ public class MyStringUtils {
         if (split.length > params.length) {// 这里适配了结尾处为?的情况.
             result = result + split[split.length - 1];
         }
-        System.out.println(result);
+        System.out.print(result);
     }
 
     @Test
