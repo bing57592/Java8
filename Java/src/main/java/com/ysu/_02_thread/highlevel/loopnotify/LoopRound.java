@@ -43,7 +43,7 @@ public class LoopRound {
                 c2.await();
             }
             for (int i = 0; i < 10; i++) {
-                MyStringUtils.print("线程: ? \t打印AA第 ? 次  \t当前第 ? 圈", new Object[]{Thread.currentThread().getName(), i + 1, currentLoop + 1});
+                MyStringUtils.print("线程: ? \t打印BB第 ? 次  \t当前第 ? 圈", new Object[]{Thread.currentThread().getName(), i + 1, currentLoop + 1});
             }
             flag = 3;
             c3.signal(); // 唤醒c3
@@ -62,7 +62,7 @@ public class LoopRound {
             }
             for (int i = 0; i < 15; i++) {
 
-                MyStringUtils.print("线程: ? \t打印AA第 ? 次  \t当前第 ? 圈", new Object[]{Thread.currentThread().getName(), i + 1, currentLoop + 1});
+                MyStringUtils.print("线程: ? \t打印CC第 ? 次  \t当前第 ? 圈", new Object[]{Thread.currentThread().getName(), i + 1, currentLoop + 1});
             }
             flag = 1;
             c1.signal(); // 唤醒c1
