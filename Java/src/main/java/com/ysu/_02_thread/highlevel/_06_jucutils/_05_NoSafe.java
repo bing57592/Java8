@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel._06_CountDownLatch;
+package com.ysu._02_thread.highlevel._06_jucutils;
 
 import com.ysu._00_common.util.MyThreadUtils;
 import org.junit.Test;
