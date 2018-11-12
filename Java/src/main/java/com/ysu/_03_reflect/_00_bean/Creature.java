@@ -1,4 +1,4 @@
-package com.ysu._03_reflect.bean;
+package com.ysu._03_reflect._00_bean;
 
 import java.io.Serializable;
 

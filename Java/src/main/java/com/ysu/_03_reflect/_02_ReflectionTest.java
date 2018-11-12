@@ -1,6 +1,6 @@
 package com.ysu._03_reflect;
 
-import com.ysu._03_reflect.bean.Person;
+import com.ysu._03_reflect._00_bean.Person;
 import org.junit.Test;
 
 import java.lang.annotation.Annotation;
@@ -10,7 +10,7 @@ import java.lang.reflect.*;
  * created by bing57592
  * 2018-10-21 02:16
  */
-public class _02_ReflectionTest2 {
+public class _02_ReflectionTest {
 
 
     /**
@@ -231,7 +231,7 @@ public class _02_ReflectionTest2 {
      */
     @Test
     public void test_fields() throws Exception {
-        Class<com.ysu._03_reflect.bean.Person> clazz = com.ysu._03_reflect.bean.Person.class;
+        Class<com.ysu._03_reflect._00_bean.Person> clazz = com.ysu._03_reflect._00_bean.Person.class;
         Field[] fields1 = clazz.getFields(); // 获取运行时类及其父类中声明为public的属性
         for (Field field : fields1) {
             System.out.println(field.getType()); // java.lang.String

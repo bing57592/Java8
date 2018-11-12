@@ -7,6 +7,7 @@ import com.ysu._00_common.util.MyThreadUtils;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * CountDownLatch 线程计数器
  * CountDownLatch Count-计数, Down-减法, Latch-门闩.
  * 让一些线程阻塞, 直到另一些线程完成一系列操作后才被唤醒.
  * CountDownLatch主要有两个方法，当一个或多个线程调用await方法时，这些线程会阻塞。

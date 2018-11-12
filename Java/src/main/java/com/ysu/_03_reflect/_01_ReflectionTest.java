@@ -15,7 +15,7 @@ import java.util.Properties;
  * created by bing57592
  * 2018-10-20 22:10
  */
-public class _01_ReflectionTest1 {
+public class _01_ReflectionTest {
     private static String CLASS_NAME = "com.ysu._00_bean.Person";
 
 
@@ -54,7 +54,7 @@ public class _01_ReflectionTest1 {
     @Test
     public void test4() throws IOException {
         Properties properties = new Properties();
-        InputStream resourceAsStream = _01_ReflectionTest1.class.getClassLoader().
+        InputStream resourceAsStream = _01_ReflectionTest.class.getClassLoader().
                 getResourceAsStream("properties/jdbc.properties");// jdbc.properties默认读取根目录下
         properties.load(resourceAsStream);
         String name = properties.getProperty("name");
