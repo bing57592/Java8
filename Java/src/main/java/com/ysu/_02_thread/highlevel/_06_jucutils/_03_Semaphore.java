@@ -22,7 +22,7 @@ public class _03_Semaphore {
                     semaphore.acquire();// 该线程获取信号量
                     System.out.println(Thread.currentThread().getName() + "\t占据车位");
                     TimeUnit.SECONDS.sleep(new Random().nextInt(20));
-                    System.out.println(Thread.currentThread().getName() + "*******离开车位");
+                    System.out.println(Thread.currentThread().getName() + "***离开车位");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
