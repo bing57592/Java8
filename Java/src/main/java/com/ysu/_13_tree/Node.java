@@ -1,5 +1,7 @@
 package com.ysu._13_tree;
 
+import com.ysu._13_tree.tree.SearchTree;
+
 /**
  * @Author bing57592
  * @Date 2018-11-19 23:03
@@ -58,5 +60,15 @@ public class Node {
             }
         }
 
+    }
+
+    public static void main(String[] args) {
+        SearchTree searchTree = SearchTree.initTree(40);
+        searchTree.insertNode(1234);
+        searchTree.insertNode(14);
+        searchTree.insertNode(88);
+        searchTree.insertNode(5);
+        searchTree.insertNode(12);
+        searchTree.insertNode(99);
     }
 }

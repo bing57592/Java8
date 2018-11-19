@@ -12,6 +12,11 @@ public class SearchTree {
     }
 
 
+    public void insertNode(int value) {
+        Node node = new Node(value);
+        insertNode(node);
+    }
+
     public void insertNode(Node node) {
         if (root == null) {
             this.root = node;
@@ -81,4 +86,6 @@ public class SearchTree {
 
 
     }
+
+
 }
