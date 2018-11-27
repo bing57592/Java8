@@ -87,6 +87,10 @@
         </dependency>
     </dependencies>
 
+
+
+
+
     <build>
         <finalName>java8</finalName>
         <pluginManagement></pluginManagement>
