@@ -31,7 +31,7 @@ public class _01_CountDownLatch {
         }
         cdl.await();//什么时候变为零了，什么时候走
 
-        System.out.println(Thread.currentThread().getName() + "********秦灭6国，一统华夏");
+        System.out.println(Thread.currentThread().getName() + "6个线程全部执行完成, 开始执行cdl.await()之后的语句. ");
 
     }
 }

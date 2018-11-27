@@ -32,6 +32,13 @@
 
 
     <dependencies>
+
+        <!--解析json的工具类-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.4</version>
+        </dependency>
         <!--发送HTTP请求的Http-Client-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>

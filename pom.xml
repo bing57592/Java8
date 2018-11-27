@@ -11,6 +11,7 @@
         <module>Java</module>
         <module>Algorithm</module>
         <module>JavaEE</module>
+        <module>SpringBoot</module>
     </modules>
     <packaging>pom</packaging>
 
