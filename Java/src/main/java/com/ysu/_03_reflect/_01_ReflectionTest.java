@@ -55,7 +55,7 @@ public class _01_ReflectionTest {
     public void test4() throws IOException {
         Properties properties = new Properties();
         InputStream resourceAsStream = _01_ReflectionTest.class.getClassLoader().
-                getResourceAsStream("properties/jdbc.properties");// jdbc.properties默认读取根目录下
+                getResourceAsStream("property/jdbc.properties");// jdbc.properties默认读取根目录下
         properties.load(resourceAsStream);
         String name = properties.getProperty("name");
         String cup = properties.getProperty("cup");

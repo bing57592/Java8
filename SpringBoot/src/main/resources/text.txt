@@ -1,0 +1,2 @@
+book.author=bing57592
+book.name=springboot
