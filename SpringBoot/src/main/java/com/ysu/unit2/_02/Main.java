@@ -19,8 +19,5 @@ public class Main {
                 = new AnnotationConfigApplicationContext(DiConfig.class);
 
         BeanEL bean = ioc.getBean(BeanEL.class);
-
-        System.out.println(bean.age);
-        System.out.println(bean.name);
     }
 }
