@@ -1,4 +1,4 @@
-package com.ysu.scala.unit5
+package com.ysu.scala.unit5.Collection
 
 import scala.collection.mutable.ArrayBuffer;
 

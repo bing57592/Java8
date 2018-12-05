@@ -1,4 +1,4 @@
-package com.ysu.scala.unit5
+package com.ysu.scala.unit5.Collection
 
 /**
   * 集合元素和函数的映射关系

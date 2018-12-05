@@ -1,4 +1,4 @@
-package com.ysu.scala.unit5
+package com.ysu.scala.unit5.Collection
 
 /**
   * stream了解即可, 没人用

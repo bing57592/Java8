@@ -1,4 +1,4 @@
-package com.ysu.scala.unit5
+package com.ysu.scala.unit5.Collection
 
 /**
   * View 和 Stream 非常相近, 只是不能缓存数据.

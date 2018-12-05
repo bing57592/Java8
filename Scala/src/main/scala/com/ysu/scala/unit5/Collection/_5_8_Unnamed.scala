@@ -1,4 +1,4 @@
-package com.ysu.scala.unit5
+package com.ysu.scala.unit5.Collection
 
 /**
   * 折叠, 化简, 扫描
