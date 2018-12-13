@@ -3,7 +3,9 @@ package com.ysu.java;
 import org.apache.commons.lang.StringUtils;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,6 +16,7 @@ public class StringTest {
     @Test
     public void test1() {
         String str = "   ";
+
         System.out.println(StringUtils.isEmpty(str.trim()));
 
         Map<String, Object> map = new HashMap<>();
@@ -22,5 +25,10 @@ public class StringTest {
         h = "str".hashCode();
         int i = (h = "str".hashCode()) ^ (h >>> 16);
         System.out.println(i);
+    }
+
+    @Test
+    public void test2() throws Exception {
+        List<String> list = new ArrayList<>();
     }
 }

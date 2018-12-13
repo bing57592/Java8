@@ -23,8 +23,6 @@ object FunctionRecursion {
     * 问题3: 猴子吃桃子问题.
     * 有一堆桃子, 猴子第一天吃了其中的一半, 并再多吃了一个. 以后猴子每天都吃其中的一半, 并再多吃一个
     * 当吃到第十天的时候, 发现只有一个桃子. 问最初由多少个桃子
-    *
-    *
     */
   def exercise3(n: Int): Int = {
     if (n == 1) return 1 else return 2 * (exercise3(n - 1) + 1)

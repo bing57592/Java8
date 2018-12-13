@@ -16,6 +16,5 @@ public class Hello {
         Map<Integer, String> map = new HashMap<>();
         System.out.println(str);
 
-
     }
 }
