@@ -7,7 +7,8 @@ package com.ysu.leetcode._01_primary._01_array;
  */
 public class _01 {
     public static void main(String[] args) {
-
+        int i = code_1(new int[]{123, 245});
+        System.out.println(i);
     }
 
     public static int code_1(int[] nums) {

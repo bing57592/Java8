@@ -6,15 +6,39 @@
  */
 package com.ysu;
 
+import com.ysu.bean.SourceBean;
+import com.ysu.bean.TargetBean;
+import org.springframework.beans.BeanUtils;
+import org.junit.jupiter.api.Test;
+
 /**
  * Created by 陈宪东 on 2018/12/3 18:11
  */
 public class Main {
-    public static void main(String[] args) {
+    @Test
+    public void test1() {
         DemoEnum demoEnum;
         System.out.println("声明变量后, 是否调用");
 
         DemoEnum demoEnum1 = DemoEnum.QUARTER;
         System.out.println("调用类的属性后, 是否调用");
     }
+
+    @Test
+    public void test2() {
+        SourceBean sourceBean = new SourceBean();
+        sourceBean.setParam1("1");
+        sourceBean.setParam2(2);
+        sourceBean.setParam3(3.0);
+        sourceBean.setParam4(4.0);
+        sourceBean.setParam5("5");
+        sourceBean.setParam6("6");
+
+        TargetBean targetBean = new TargetBean();
+        BeanUtils.copyProperties(sourceBean, targetBean);
+        System.out.println(targetBean);
+
+    }
+
+
 }

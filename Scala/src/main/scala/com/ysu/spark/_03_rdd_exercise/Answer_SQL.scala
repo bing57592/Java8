@@ -8,20 +8,28 @@ import org.apache.spark.{SparkConf, SparkContext}
   * @Date 2018-12-16 22:29
   */
 object Answer_SQL {
-	def main(args: Array[String]): Unit = {
-		///Users/bing57592/Documents/code/Java8/Scala/src/main/resources/mysql-sql
+  def main(args: Array[String]): Unit = {
+    ///Users/bing57592/Documents/code/Java8/Scala/src/main/resources/mysql-sql
 
-		var sparkConf = new SparkConf().setMaster("local[*]").setAppName("clickcount")
-		var sc = new SparkContext(sparkConf)
-		var rdd_exercise = sc.textFile("/Users/bing57592/Documents/code/Java8/Scala/src/main/resources/mysql-sql/exercise")
-		var result = rdd_exercise.filter(item => {
-			item.startsWith("--")
-		}).collect()
+    val sparkConf = new SparkConf().setMaster("local[*]").setAppName("clickcount")
+    val sc = new SparkContext(sparkConf)
+    //		var rdd_exercise = sc.textFile("/Users/bing57592/Documents/code/Java8/Scala/src/main/resources/mysql-sql/")
+    //		var result = rdd_exercise.filter(item => {
+    //			item.startsWith("--")
+    //		}).collect()
+    //
+    //		for (elem <- result) {
+    //			println(elem)
+    //		}
+    val rdd_base = sc.textFile("C:\\Users\\chenxiandong\\Downloads\\catalina.out.2018-12-14-15_40_33.log-1545039813\\" +
+      "export\\Instances\\plus.mobile\\server1\\logs\\catalina.out.2018-12-14-15_40_33.log")
 
-		for (elem <- result) {
-			println(elem)
-		}
+    val rdd1 = rdd_base.filter(item => {
+      item.contains("ERROR")
+    })
 
-		sc.stop()
-	}
+    val res = rdd1.coalesce(1).saveAsTextFile("test/test.txt")
+
+    sc.stop()
+  }
 }
