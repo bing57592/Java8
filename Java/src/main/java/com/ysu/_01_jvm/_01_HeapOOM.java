@@ -15,6 +15,9 @@ public class _01_HeapOOM {
     public static void main(String[] args) {
         List<OOMObject> list = new ArrayList<>();
         while (true) {
+			for (int i = 0; i < 100; i++) {
+				System.out.println(i);
+			}
             list.add(new OOMObject());
         }
     }
