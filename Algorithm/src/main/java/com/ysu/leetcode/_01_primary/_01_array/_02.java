@@ -15,6 +15,12 @@ public class _02 {
         code_2(price);
     }
 
+    public static int code_3(int[] nums) {
+        if (nums.length == 0) return 0;
+
+        return 0;
+    }
+
     public static void code_1(int[] prices) {
         int flag = 0;
         int profit = 0;

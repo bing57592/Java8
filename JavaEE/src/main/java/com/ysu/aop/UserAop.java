@@ -43,5 +43,8 @@ public class UserAop {
         System.out.println("[AOP] AfterThrowing");
     }
 
+    public static void main(String[] args) {
+        String string ;
+    }
 
 }

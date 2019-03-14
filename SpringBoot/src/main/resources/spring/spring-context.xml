@@ -12,6 +12,8 @@
         <!-- 指定任务执行的方法 -->
         <property name="targetMethod" value="quartzJobExecute"/>
     </bean>
+
+    <!--触发器与JobDetail 建立联系-->
     <bean id="exampleJobTrigger"
           class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="exampleJobDetail"/>
@@ -22,7 +24,6 @@
     <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
         <property name="triggers">
             <list>
-                <!-- <ref bean="exampleJobTrigger" /> -->
                 <ref bean="exampleJobTrigger"/>
             </list>
         </property>

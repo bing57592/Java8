@@ -11,6 +11,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object _01_Transformation_02 {
 	def main(args: Array[String]): Unit = {
 		var sparkConf = new SparkConf().setMaster("local[*]").setAppName("wordCount")
+
 		var sc = new SparkContext(sparkConf)
 		// 11. def reduceByKey(func: (V, V) => V): RDD[(K, V)]
 		// ==> 返回值的类型必须与输入值一样.

@@ -6,10 +6,6 @@
  */
 package com.ysu.quartz;
 
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
-import org.springframework.scheduling.quartz.QuartzJobBean;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

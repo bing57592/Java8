@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel._06_jucutils;
+package com.ysu._02_thread.highlevel._06_juc;
 
 import com.ysu._00_common.util.MyThreadUtils;
 import org.junit.Test;

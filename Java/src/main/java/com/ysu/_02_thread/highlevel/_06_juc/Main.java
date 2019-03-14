@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel._06_jucutils;
+package com.ysu._02_thread.highlevel._06_juc;
 
 import java.util.ArrayList;
 import java.util.List;

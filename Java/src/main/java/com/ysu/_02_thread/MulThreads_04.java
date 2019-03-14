@@ -2,7 +2,10 @@ package com.ysu._02_thread;
 
 import com.ysu._00_common.util.MyStringUtils;
 import com.ysu._00_common.util.MyThreadUtils;
+import org.junit.Test;
 
+import java.util.concurrent.CompletionService;
+import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -32,5 +35,11 @@ public class MulThreads_04 {
         MyThreadUtils.sleep(2000);
         MyStringUtils.print("一共花费了 ? 秒", end - start);
         MyThreadUtils.stopJVM();
+    }
+
+    @Test
+    public void test() throws Exception{
+        ExecutorService executorService = Executors.newFixedThreadPool(100);
+        CompletionService cs = new ExecutorCompletionService(executorService);
     }
 }

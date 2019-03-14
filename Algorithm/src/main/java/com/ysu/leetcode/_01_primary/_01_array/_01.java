@@ -7,9 +7,26 @@ package com.ysu.leetcode._01_primary._01_array;
  */
 public class _01 {
     public static void main(String[] args) {
-        int i = code_1(new int[]{123, 245});
+        int i = code_3(new int[]{1, 2, 2, 2, 2, 3, 4, 5, 6, 6, 6, 7, 8});
         System.out.println(i);
     }
+
+    public static int code_3(int[] nums) {
+        if (nums.length == 0) return 0;
+        int count = 0;
+        int current = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == current) {
+                nums[i] = 0;
+                count++;
+            } else {
+                current = nums[i];
+            }
+        }
+        return nums.length - count;
+    }
+
 
     public static int code_1(int[] nums) {
         int countFlag = 0;

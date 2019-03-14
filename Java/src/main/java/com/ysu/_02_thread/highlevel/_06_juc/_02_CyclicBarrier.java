@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel._06_jucutils;
+package com.ysu._02_thread.highlevel._06_juc;
 
 import com.ysu._00_common.util.MyStringUtils;
 
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class _02_CyclicBarrier {
     public static void main(String[] args) {
         int NUMBER = 7;
-        CyclicBarrier cb = new CyclicBarrier(NUMBER, () -> {
+        CyclicBarrier cb = new CyclicBarrier(3, () -> {
             System.out.println("################召唤神龙");
         });
 

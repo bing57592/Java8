@@ -15,6 +15,7 @@
         <module>Dubbo_api</module>
         <module>Dubbo_consumer</module>
         <module>Dubbo_provider</module>
+        <module>YouTube</module>
     </modules>
     <packaging>pom</packaging>
 

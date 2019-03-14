@@ -1,4 +1,4 @@
-package com.ysu._02_thread.highlevel._06_jucutils;
+package com.ysu._02_thread.highlevel._06_juc;
 
 import com.ysu._00_common.util.MyMathUtils;
 import com.ysu._00_common.util.MyStringUtils;
@@ -20,18 +20,19 @@ import java.util.concurrent.CountDownLatch;
  */
 public class _01_CountDownLatch {
     public static void main(String[] args) throws Exception {
-        CountDownLatch cdl = new CountDownLatch(6);
+        CountDownLatch cdl = new CountDownLatch(3);
 
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <= 7; i++) {
             new Thread(() -> {
-                MyThreadUtils.sleep(MyMathUtils.randomInt(1000, 20000));
+                MyThreadUtils.sleep(MyMathUtils.randomInt(1000, 2000));
                 MyStringUtils.println("线程 ? 运行结束", new Object[]{Thread.currentThread().getName()});
                 cdl.countDown();
             }).start();
         }
         cdl.await();//什么时候变为零了，什么时候走
-
-        System.out.println(Thread.currentThread().getName() + "6个线程全部执行完成, 开始执行cdl.await()之后的语句. ");
-
+        MyStringUtils.println("线程 ?: ? 个线程全部执行完成, 开始执行cdl.await()之后的语句.",
+                new Object[]{Thread.currentThread().getName(), 3});
     }
+
+
 }
